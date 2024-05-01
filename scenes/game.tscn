@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbsn0w6lkdmav"]
+
+[ext_resource type="PackedScene" uid="uid://c3v546lwqop1u" path="res://scenes/tilt.tscn" id="1_d8x6n"]
+[ext_resource type="PackedScene" uid="uid://c8ngua2phx7i5" path="res://scenes/ball_area.tscn" id="2_hitgi"]
+[ext_resource type="Script" path="res://scripts/ball_area.gd" id="3_sw2dc"]
+[ext_resource type="Script" path="res://scripts/tilt.gd" id="4_n1oiv"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ball" parent="." instance=ExtResource("2_hitgi")]
+position = Vector2(-7, -40)
+script = ExtResource("3_sw2dc")
+
+[node name="Tilts" type="Node" parent="."]
+
+[node name="Tilt1" parent="Tilts" instance=ExtResource("1_d8x6n")]
+unique_name_in_owner = true
+position = Vector2(105, 88)
+script = ExtResource("4_n1oiv")
+
+[node name="Tilt2" parent="Tilts" instance=ExtResource("1_d8x6n")]
+unique_name_in_owner = true
+position = Vector2(1141, 86)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(569, 321)
+
+[node name="LeftWB" parent="." instance=ExtResource("1_d8x6n")]
+position = Vector2(-47, -848)
+scale = Vector2(-2.60216, 5.26011)
+
+[node name="LeftWB2" parent="." instance=ExtResource("1_d8x6n")]
+position = Vector2(1085, -848)
+scale = Vector2(-2.60216, 5.26011)
+
+[node name="LeftWB3" parent="." instance=ExtResource("1_d8x6n")]
+position = Vector2(-1449, 89)
+rotation = -1.57028
+scale = Vector2(-3.59243, 9.11306)
+
+[node name="LeftWB4" parent="." instance=ExtResource("1_d8x6n")]
+position = Vector2(-1454, 724)
+rotation = -1.57028
+scale = Vector2(-3.59243, 9.11306)
