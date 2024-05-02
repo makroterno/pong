@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://y4afw1oua6tx"
-path="res://.godot/imported/pixil-frame-0 (2).png-571ba1d405aef582a68e5ede27d25501.ctex"
+uid="uid://ch2jf6gjxxx2g"
+path="res://.godot/imported/BallMotion.png-3a2e5dfa31b36b4149437c8a8993da0f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pixil-frame-0 (2).png"
-dest_files=["res://.godot/imported/pixil-frame-0 (2).png-571ba1d405aef582a68e5ede27d25501.ctex"]
+source_file="res://assets/arts/BallMotion.png"
+dest_files=["res://.godot/imported/BallMotion.png-3a2e5dfa31b36b4149437c8a8993da0f.ctex"]
 
 [params]
 

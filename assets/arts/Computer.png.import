@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6qn8d761j60e"
-path="res://.godot/imported/pixil-frame-0 (1).png-5eee405715ca3f5e11bbf8672bf9ebdd.ctex"
+uid="uid://73i1v257ergq"
+path="res://.godot/imported/Computer.png-411f455546699f0c4952948176945233.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pixil-frame-0 (1).png"
-dest_files=["res://.godot/imported/pixil-frame-0 (1).png-5eee405715ca3f5e11bbf8672bf9ebdd.ctex"]
+source_file="res://assets/arts/Computer.png"
+dest_files=["res://.godot/imported/Computer.png-411f455546699f0c4952948176945233.ctex"]
 
 [params]
 
