@@ -1,9 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://bbsn0w6lkdmav"]
+[gd_scene load_steps=10 format=3 uid="uid://bbsn0w6lkdmav"]
 
 [ext_resource type="Texture2D" uid="uid://cnepfbhbh10ca" path="res://assets/arts/Board.png" id="1_jy6hx"]
 [ext_resource type="PackedScene" uid="uid://dohrry3qqjt2u" path="res://scenes/ball.tscn" id="2_b775n"]
 [ext_resource type="PackedScene" uid="uid://dann5wvlnqv6p" path="res://scenes/player_1.tscn" id="3_cjmls"]
+[ext_resource type="Script" path="res://scenes/player_1.gd" id="4_6ob5r"]
 [ext_resource type="PackedScene" uid="uid://b35t86koauf8g" path="res://scenes/player_2.tscn" id="4_d261k"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_28hpb"]
+distance = -588.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wndj3"]
+normal = Vector2(0, 1)
+distance = -62.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_enevi"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hbeak"]
+normal = Vector2(-1, 0)
+distance = -1150.0
 
 [node name="Node2D" type="Node2D"]
 
@@ -18,8 +33,34 @@ position = Vector2(573, 330)
 
 [node name="Player1" parent="." instance=ExtResource("3_cjmls")]
 unique_name_in_owner = true
-position = Vector2(29, 295)
+position = Vector2(31, 322)
+script = ExtResource("4_6ob5r")
 
 [node name="Player2" parent="." instance=ExtResource("4_d261k")]
 unique_name_in_owner = true
-position = Vector2(1126, 295)
+position = Vector2(1125, 327)
+
+[node name="BottomWorldBoundary" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomWorldBoundary"]
+position = Vector2(576, 45)
+shape = SubResource("WorldBoundaryShape2D_28hpb")
+
+[node name="UpWorldBoundary" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UpWorldBoundary"]
+position = Vector2(576, 75)
+shape = SubResource("WorldBoundaryShape2D_wndj3")
+
+[node name="LeftWorldBoundary" type="Area2D" parent="."]
+position = Vector2(0, 182)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWorldBoundary"]
+position = Vector2(1, -2)
+shape = SubResource("WorldBoundaryShape2D_enevi")
+
+[node name="RightWorldBoundary" type="Area2D" parent="."]
+position = Vector2(16, -4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWorldBoundary"]
+shape = SubResource("WorldBoundaryShape2D_hbeak")
