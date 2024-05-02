@@ -2,16 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://is67dajg1mnc" path="res://assets/arts/Player.png" id="1_od6d2"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ulynn"]
-size = Vector2(9, 120)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tslmo"]
+size = Vector2(8, 118)
 
-[node name="Player2" type="Node2D"]
+[node name="Player2" type="CharacterBody2D"]
 
-[node name="Player2" type="CharacterBody2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="Player2"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_od6d2")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
-position = Vector2(-4.5, 0)
-shape = SubResource("RectangleShape2D_ulynn")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 1)
+shape = SubResource("RectangleShape2D_tslmo")

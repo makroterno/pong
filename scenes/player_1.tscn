@@ -2,16 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://73i1v257ergq" path="res://assets/arts/Computer.png" id="1_f6p2n"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ajgt"]
-size = Vector2(8, 120)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g8fsj"]
+size = Vector2(8, 118)
 
-[node name="Player1" type="Node2D"]
+[node name="Player1" type="CharacterBody2D"]
 
-[node name="Player1" type="CharacterBody2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="Player1"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_f6p2n")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(4, 0)
-shape = SubResource("RectangleShape2D_2ajgt")
+shape = SubResource("RectangleShape2D_g8fsj")
