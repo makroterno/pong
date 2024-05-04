@@ -1,32 +1,37 @@
 [gd_scene load_steps=10 format=3 uid="uid://bbsn0w6lkdmav"]
 
-[ext_resource type="Texture2D" uid="uid://cnepfbhbh10ca" path="res://assets/arts/Board.png" id="1_jy6hx"]
 [ext_resource type="PackedScene" uid="uid://dohrry3qqjt2u" path="res://scenes/ball.tscn" id="2_b775n"]
 [ext_resource type="PackedScene" uid="uid://dann5wvlnqv6p" path="res://scenes/player_1.tscn" id="3_cjmls"]
-[ext_resource type="Script" path="res://scenes/player_1.gd" id="4_6ob5r"]
+[ext_resource type="Script" path="res://player_1.gd" id="4_6ob5r"]
 [ext_resource type="PackedScene" uid="uid://b35t86koauf8g" path="res://scenes/player_2.tscn" id="4_d261k"]
+[ext_resource type="Script" path="res://scripts/player_2.gd" id="5_03an0"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_28hpb"]
-distance = -588.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fonul"]
+size = Vector2(1136.5, 20)
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wndj3"]
-normal = Vector2(0, 1)
-distance = -62.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tb860"]
+size = Vector2(1138.5, 20)
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_enevi"]
-normal = Vector2(1, 0)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_66cr8"]
+size = Vector2(18, 652)
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hbeak"]
-normal = Vector2(-1, 0)
-distance = -1150.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4qvht"]
+size = Vector2(18, 658)
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Board" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(576, 323.625)
-scale = Vector2(1.43641, 1.42253)
-texture = ExtResource("1_jy6hx")
+[node name="Scoreboard" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 127.0
+offset_top = 48.0
+offset_right = 364.0
+offset_bottom = 82.0
+scale = Vector2(0.992576, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "Score: 
+"
 
 [node name="Ball" parent="." instance=ExtResource("2_b775n")]
 position = Vector2(573, 330)
@@ -39,28 +44,28 @@ script = ExtResource("4_6ob5r")
 [node name="Player2" parent="." instance=ExtResource("4_d261k")]
 unique_name_in_owner = true
 position = Vector2(1125, 327)
+script = ExtResource("5_03an0")
 
 [node name="BottomWorldBoundary" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomWorldBoundary"]
-position = Vector2(576, 45)
-shape = SubResource("WorldBoundaryShape2D_28hpb")
+position = Vector2(572.75, 643)
+shape = SubResource("RectangleShape2D_fonul")
 
 [node name="UpWorldBoundary" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UpWorldBoundary"]
-position = Vector2(576, 75)
-shape = SubResource("WorldBoundaryShape2D_wndj3")
+position = Vector2(573.75, 10)
+shape = SubResource("RectangleShape2D_tb860")
 
 [node name="LeftWorldBoundary" type="Area2D" parent="."]
-position = Vector2(0, 182)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWorldBoundary"]
-position = Vector2(1, -2)
-shape = SubResource("WorldBoundaryShape2D_enevi")
+position = Vector2(-6, 326)
+shape = SubResource("RectangleShape2D_66cr8")
 
 [node name="RightWorldBoundary" type="Area2D" parent="."]
-position = Vector2(16, -4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightWorldBoundary"]
-shape = SubResource("WorldBoundaryShape2D_hbeak")
+position = Vector2(1156, 319)
+shape = SubResource("RectangleShape2D_4qvht")
